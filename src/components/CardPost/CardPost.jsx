@@ -16,19 +16,22 @@ const CardPost = ({ post, author }) => {
 		slug,
 	} = post || {};
 
-	const imageProps = useNextSanityImage(client, mainImage);
-	const getAuthor = author?.find((author) => author._id === authorRef._ref);
+	const imageProps = mainImage ? useNextSanityImage(client, mainImage) : {};
+	const getAuthor =
+		author?.find((author) => author._id === authorRef._ref) || {};
 
 	return (
 		<div className={styles['post']}>
 			<div className={styles['post-image']}>
-				<Image
-					src={imageProps?.src}
-					blurDataURL={imageProps?.blurDataURL}
-					alt={title}
-					width={imageProps?.width}
-					height={imageProps?.height}
-				/>
+				{imageProps.src && (
+					<Image
+						src={imageProps.src}
+						blurDataURL={imageProps.blurDataURL}
+						alt={title}
+						width={imageProps.width}
+						height={imageProps.height}
+					/>
+				)}
 			</div>
 			<div className={styles['post-content']}>
 				<h2>{title}</h2>

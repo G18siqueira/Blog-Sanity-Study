@@ -17,8 +17,9 @@ const Post = ({ post, author }) => {
 		body,
 	} = post || {};
 
-	const imageProps = useNextSanityImage(client, mainImage);
-	const getAuthor = author?.find((author) => author._id === authorRef._ref);
+	const imageProps = mainImage ? useNextSanityImage(client, mainImage) : {};
+	const getAuthor =
+		author?.find((author) => author._id === authorRef._ref) || {};
 
 	const ptComponents = {
 		types: {
@@ -45,13 +46,15 @@ const Post = ({ post, author }) => {
 				</div>
 				<article className={styles['post-content']}>
 					<div className={styles['post-content_image']}>
-						<Image
-							src={imageProps?.src}
-							blurDataURL={imageProps?.blurDataURL}
-							alt={title}
-							width={imageProps?.width}
-							height={imageProps?.height}
-						/>
+						{imageProps.src && (
+							<Image
+								src={imageProps.src}
+								blurDataURL={imageProps.blurDataURL}
+								alt={title}
+								width={imageProps.width}
+								height={imageProps.height}
+							/>
+						)}
 					</div>
 					<PortableText value={body} components={ptComponents} />
 				</article>
