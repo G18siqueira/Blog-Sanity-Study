@@ -102,7 +102,7 @@ export default function Home({ posts, author }) {
 	);
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	const posts = await client.fetch(`*[_type == "post"]`);
 	const author = await client.fetch(`*[_type == "author"]`);
 
