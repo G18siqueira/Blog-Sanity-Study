@@ -1,3 +1,6 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .page {
 
     &-container {
@@ -15,7 +18,41 @@
     &-content {
         display: grid;
         justify-content: center;
-        gap: 3rem;
+        gap: 5rem;
+        margin: 0 0 6rem;
+
+        @include device(md) {
+            gap: 3rem;
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: $primary;
+            color: $white;
+            border: none;
+            border-radius: .2rem;
+            outline: none;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: .5;
+            }
+        }
+
+        span {
+            display: inline;
+        }
     }
 
 }

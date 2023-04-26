@@ -15,7 +15,7 @@ const Header = () => {
 						<Logo />
 					</div>
 					<div className={styles['header-search']}>
-						<form>
+						<form action="/">
 							<label htmlFor="search">buscar</label>
 							<input
 								type="text"

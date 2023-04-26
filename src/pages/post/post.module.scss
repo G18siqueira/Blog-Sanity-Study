@@ -32,6 +32,29 @@
             @include device(md) {
                 height: 39.4rem;
             }
+
+            img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+
+        :is(h1, h2, h3, h4, h5, h6) {
+            margin: 2rem 0 1rem;
+        }
+
+        ul {
+            margin: 2rem 0 1rem;
+            list-style-position: inside;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            text-align: center;
+            margin: 2rem auto;
         }
     }
 }

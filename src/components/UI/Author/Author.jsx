@@ -1,18 +1,34 @@
 import Image from 'next/image';
+import client from '@/sanity';
+import { useNextSanityImage } from 'next-sanity-image';
 
 import styles from './author.module.scss';
-const Author = () => {
+const Author = ({ author, date = new Date() }) => {
+	const { name, image } = author || {};
+
+	const newDate = new Date(date);
+	const formattedDate = new Intl.DateTimeFormat('pt-BR', {
+		day: 'numeric',
+		month: 'long',
+	}).format(newDate);
+
+	const imageProps = useNextSanityImage(client, image);
+
 	return (
 		<div className={styles['author']}>
 			<div className={styles['author-image']}>
-				<Image src="" alt="" width={''} height={''} />
+				<Image
+					src={imageProps?.src}
+					blurDataURL={imageProps?.blurDataURL}
+					alt={author}
+					width={imageProps?.width}
+					height={imageProps?.height}
+				/>
 			</div>
 			<div className={styles['author-content']}>
-				<span className={styles['author-content_name']}>
-					Gustavo Siqueira
-				</span>
+				<span className={styles['author-content_name']}>{name}</span>
 				<span className={styles['author-content_date']}>
-					25 de abril
+					{formattedDate}
 				</span>
 			</div>
 		</div>

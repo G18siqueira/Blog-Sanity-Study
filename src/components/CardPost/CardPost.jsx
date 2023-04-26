@@ -2,26 +2,41 @@ import Author from '../UI/Author/Author';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import client from '@/sanity';
+import { useNextSanityImage } from 'next-sanity-image';
 
 import styles from './cardpost.module.scss';
-const CardPost = () => {
+const CardPost = ({ post, author }) => {
+	const {
+		author: authorRef,
+		title,
+		mainImage,
+		publishedAt,
+		short_text,
+		slug,
+	} = post || {};
+
+	const imageProps = useNextSanityImage(client, mainImage);
+	const getAuthor = author?.find((author) => author._id === authorRef._ref);
+
 	return (
 		<div className={styles['post']}>
 			<div className={styles['post-image']}>
-				<Image src="" alt="" width={''} height={''} />
+				<Image
+					src={imageProps?.src}
+					blurDataURL={imageProps?.blurDataURL}
+					alt={title}
+					width={imageProps?.width}
+					height={imageProps?.height}
+				/>
 			</div>
 			<div className={styles['post-content']}>
-				<h2>Título do post</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Adipisci, beatae inventore. Possimus, harum magnam pariatur
-					error sunt reprehenderit molestiae natus exercitationem.
-					Obcaecati in ex quaerat voluptatem odit tempore quo velit.
-				</p>
+				<h2>{title}</h2>
+				<p>{short_text}</p>
 				<div className={styles['post-content_footer']}>
-					<Author />
+					<Author author={getAuthor} date={publishedAt} />
 					<Link
-						href={`/post/nome-do-post`}
+						href={`/post/${slug.current}`}
 						aria-label="link post"
 						className={styles['link']}
 					>
