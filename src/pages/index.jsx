@@ -102,7 +102,7 @@ export default function Home({ posts, author }) {
 	);
 }
 
-export const getServerSideProps = async () => {
+export async function getStaticProps() {
 	const posts = await client.fetch(`*[_type == "post"]`);
 	const author = await client.fetch(`*[_type == "author"]`);
 
@@ -111,5 +111,18 @@ export const getServerSideProps = async () => {
 			posts,
 			author,
 		},
+		revalidate: 10, // atualizar a cada 60 segundos
 	};
-};
+}
+
+// export const getServerSideProps = async () => {
+// 	const posts = await client.fetch(`*[_type == "post"]`);
+// 	const author = await client.fetch(`*[_type == "author"]`);
+
+// 	return {
+// 		props: {
+// 			posts,
+// 			author,
+// 		},
+// 	};
+// };
