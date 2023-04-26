@@ -111,7 +111,7 @@ export async function getStaticProps() {
 			posts,
 			author,
 		},
-		revalidate: 10, // atualizar a cada 60 segundos
+		revalidate: 60, // atualizar a cada 60 segundos
 	};
 }
 
