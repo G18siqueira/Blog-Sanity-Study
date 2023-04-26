@@ -1,0 +1,21 @@
+.page {
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        max-width: 35rem;
+        margin: 0 0 6rem;
+        text-align: center;
+    }
+
+    &-content {
+        display: grid;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+}

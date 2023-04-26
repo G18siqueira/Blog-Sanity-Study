@@ -1,0 +1,131 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+}
+
+html {
+  font-size: 58%;
+  overflow-x: hidden;
+
+  @include device(md) {
+    font-size: 60%;
+  }
+
+  @include device(lg) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $fontFamily;
+  overflow-x: hidden;
+}
+
+main {
+  padding: 4rem 0;
+
+  @include device(lg) {
+    padding: 6rem 0;
+  }
+}
+
+h1,
+.h1 {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 4.5rem;
+  color: $primary;
+  font-family: $titleFontFamily;
+}
+
+h2,
+.h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+h3,
+.h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+h4,
+.h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+h5,
+.h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+p,
+.p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.btn {
+  display: inline-flex;
+  border: none;
+  outline: none;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+
+  &.btn-primary {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($primary, 5);
+    }
+  }
+}
+
+// CONTAINER
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include device(lg) {
+    padding: 0;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: 540px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: 720px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: 960px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 1170px;
+  }
+}

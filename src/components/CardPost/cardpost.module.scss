@@ -1,0 +1,42 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.post {
+    display: grid;
+    gap: 2.1rem;
+    max-width: 96.2rem;
+    cursor: pointer;
+
+    @include device(md) {
+        display: flex;
+        align-items: center;
+    }
+
+    &-image {
+        flex: none;
+        width: 20.5rem;
+        height: 20.5rem;
+        background-color: $gray2;
+    }
+
+    &-content {
+        h2 {
+            font-family: $titleFontFamily;
+            font-weight: 400;
+            margin: 0 0 .8rem;
+        }
+
+        &_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .link {
+                transition: all .1s ease-in-out;
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

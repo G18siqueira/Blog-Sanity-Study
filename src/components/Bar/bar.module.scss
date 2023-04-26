@@ -1,0 +1,14 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.bar {
+    background-color: $primary;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin: 0 0 3rem;
+
+    span {
+        font-size: 1.4rem;
+        color: $white;
+    }
+}

@@ -1,0 +1,40 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.footer {
+    padding: 4rem 0;
+    background-color: $secondary;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-content {
+        max-width: 25rem;
+        margin: 0 0 4rem;
+
+        p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin: 1rem 0;
+        }
+    }
+
+    &-socials {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            color: $primary;
+        }
+    }
+
+    &-copy {
+        align-self: center;
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,12 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.error {
+    text-align: center;
+
+    h2 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 0 0 4rem;
+    }
+}

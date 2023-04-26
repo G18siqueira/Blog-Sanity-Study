@@ -1,0 +1,37 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.post {
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 55.5rem;
+        text-align: center;
+        margin: 0 auto 5rem;
+
+        h1 {
+            margin: 0 0 1rem;
+        }
+
+        p {
+            margin: 0 0 2.5rem;
+        }
+    }
+
+    &-content {
+        max-width: 96.2rem;
+        margin: 0 auto;
+
+        &_image {
+            width: 100%;
+            background-color: $gray2;
+            margin: 0 0 6rem;
+
+            @include device(md) {
+                height: 39.4rem;
+            }
+        }
+    }
+}
