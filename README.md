@@ -4,7 +4,7 @@ Este é um projeto de estudo da construção de um blog utilizando Next.js e San
 
 ## Descrição do Projeto
 
-Neste projeto, desenvolvemos um blog utilizando Next.js e Sanity IO, onde há uma integração completa entre o front-end e o back-end. É possível criar, editar e excluir posts, além de realizar pesquisas nos posts já criados, com suporte para paginação.
+Neste projeto, desenvolvemos um blog utilizando Next.js e Sanity IO, onde há uma integração completa entre o front-end e o back-end. É possível criar, editar e excluir posts, além de realizar pesquisas nos posts já criados, com suporte para paginação. Inclusive já apliquei o conhecimento desse projeto no meu [Portfólio](https://www.gustavosiqueira.dev.br/), adicionando um blog e refatorando algumas áreas e atribuindo tudo ao sanity para fazer as edições direto pelo CMS, como por exemplo os projetos e textos do site!
 
 ## Funcionalidades
 
