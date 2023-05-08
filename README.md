@@ -1,5 +1,20 @@
-Projeto de estudo da construção de um Blog, usando Next.Js e o Sanity como CMS seguindo o tutorial do ''Canal do Front'' no Youtube! 
+# Blog em Next.js com CMS Sanity
 
+Este é um projeto de estudo da construção de um blog utilizando Next.js e Sanity como CMS, seguindo o tutorial do Canal do Front no YouTube.
+
+## Descrição do Projeto
+
+Neste projeto, desenvolvemos um blog utilizando Next.js e Sanity IO, onde há uma integração completa entre o front-end e o back-end. É possível criar, editar e excluir posts, além de realizar pesquisas nos posts já criados, com suporte para paginação.
+
+## Funcionalidades
+
+Criação de posts: você pode criar novos posts com facilidade.
+Edição de posts: é possível editar os posts existentes de acordo com suas necessidades.
+Exclusão de posts: caso não seja mais necessário, você pode excluir os posts.
+Busca de posts: é possível buscar por posts específicos utilizando a funcionalidade de pesquisa.
+Paginação: os posts são exibidos em páginas para melhor organização e navegação.
+
+##
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
